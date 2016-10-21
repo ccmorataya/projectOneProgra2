@@ -1,10 +1,11 @@
 package com.company;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ingreso {
 
-    public void ingresar_alumnos() throws IOException {
+    public ArrayList<ArrayList<String>> ingresar_alumnos(ArrayList<ArrayList<String>> alumnos) throws IOException {
 
         // Metodo scanner
         Scanner entradadatos = new Scanner(System.in);
@@ -26,32 +27,29 @@ public class ingreso {
         }else{ // caso contrario
 
             // creacion de matriz fila x y Columnas 8
-            String[][] alumnos = new String[cant_alumnos][8];
+            ArrayList<String> interno = new ArrayList<>();
 
             // Solicitar datos
             for(int i = 0; i < cant_alumnos; i++)
             {
 
                 System.out.println("Ingrese Nombre");
-                alumnos[i][0] = entradadatos.next();
+                interno.add(entradadatos.next());
                 System.out.println("Ingrese Apellido");
-                alumnos[i][1] = entradadatos.next();
+                interno.add(entradadatos.next());
                 System.out.println("Ingrese E-mail");
-                alumnos[i][2] = entradadatos.next();
+                interno.add(entradadatos.next());
                 System.out.println("Ingrese No. de Carné");
-                alumnos[i][3] = entradadatos.next();
+                interno.add(entradadatos.next());
                 System.out.println("Puntaje de tareas");
-                alumnos[i][4] = Double.toString(entradadatos.nextDouble());
+                interno.add(Double.toString(entradadatos.nextDouble()));
                 System.out.println("Puntaje exámenes");
-                alumnos[i][5] = Double.toString(entradadatos.nextDouble());
+                interno.add(Double.toString(entradadatos.nextDouble()));
                 System.out.println("Puntaje proyectos");
-                alumnos[i][6] = Double.toString(entradadatos.nextDouble());
+                interno.add(Double.toString(entradadatos.nextDouble()));
             } // fin ciclo for
-
+            alumnos.add(interno);
         }
-
+        return alumnos;
     }
-
-
 }
-
