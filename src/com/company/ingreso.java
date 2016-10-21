@@ -2,11 +2,10 @@ package com.company;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.concurrent.atomic.DoubleAccumulator;
 
-public class ingreso {
+class ingreso {
 
-    public ArrayList<ArrayList<String>> ingresar_alumnos(ArrayList<ArrayList<String>> alumnos) throws IOException {
+    ArrayList<ArrayList<String>> ingresar_alumnos(ArrayList<ArrayList<String>> alumnos) throws IOException {
 
         // Metodo scanner
         Scanner entradadatos = new Scanner(System.in);
@@ -38,16 +37,17 @@ public class ingreso {
             // Solicitar datos
             for(int i = 0; i < cant_alumnos; i++)
             {
-                System.out.println("Ingrese Nombre");
+                int alumnoId = i + 1;
+                System.out.println("Ingrese nombre alumno #" + alumnoId);
                 interno.add(entradadatos.next());
-                System.out.println("Ingrese Apellido");
+                System.out.println("Ingrese apellido alumno #" + alumnoId);
                 interno.add(entradadatos.next());
-                System.out.println("Ingrese E-mail");
+                System.out.println("Ingrese e-mail alumno #" + alumnoId);
                 interno.add(entradadatos.next());
-                System.out.println("Ingrese No. de Carné");
+                System.out.println("Ingrese No. de Carné alumno #" + alumnoId);
                 interno.add(entradadatos.next());
                 while (!tarea){
-                    System.out.println("Puntaje de tareas");
+                    System.out.println("Puntaje de tareas alumno #" + alumnoId);
                     notas.add(entradadatos.nextDouble());
                     double notasLastElement = notas.get(notas.size()-1);
                     if (notasLastElement > 100 || notasLastElement < 0){
@@ -58,9 +58,10 @@ public class ingreso {
                         tarea = true;
                     }
                 }
+                tarea = false;
                 interno.add(Double.toString(notas.get(0)));
                 while (!examen){
-                    System.out.println("Puntaje de examenes");
+                    System.out.println("Puntaje de examenes alumno #" + alumnoId);
                     notas.add(entradadatos.nextDouble());
                     double examenLastElement = notas.get(notas.size()-1);
                     if (examenLastElement > 100 || examenLastElement < 0){
@@ -71,9 +72,10 @@ public class ingreso {
                         examen = true;
                     }
                 }
+                examen = false;
                 interno.add(Double.toString(notas.get(1)));
                 while (!proyecto){
-                    System.out.println("Puntaje de proyectos");
+                    System.out.println("Puntaje de proyectos alumno #" + alumnoId);
                     notas.add(entradadatos.nextDouble());
                     double proyectoLastElement = notas.get(notas.size()-1);
                     if (proyectoLastElement > 100 || proyectoLastElement < 0){
@@ -84,6 +86,7 @@ public class ingreso {
                         proyecto = true;
                     }
                 }
+                proyecto = false;
                 interno.add(Double.toString(notas.get(2)));
 
                 for (double n: notas){
