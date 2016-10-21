@@ -10,8 +10,8 @@ class Consulta {
             for (String aa: a){
                 System.out.print(aa+"\t\t");
             }
+            System.out.println();
         }
-        System.out.println();
     }
 
     void consultar_tareas(){

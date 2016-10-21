@@ -9,8 +9,6 @@ class ingreso {
 
         // Metodo scanner
         Scanner entradadatos = new Scanner(System.in);
-        ArrayList<Double> notas = new ArrayList<>();
-        double suma = 0.00;
         boolean tarea = false;
         boolean examen = false;
         boolean proyecto = false;
@@ -30,14 +28,16 @@ class ingreso {
             System.out.println("El número de alumnos a ingresar es invalido\nPresiona cualquier tecla para continuar.");
             char pause = (char) System.in.read();
         }else{ // caso contrario
-
-            // creacion de matriz fila x y Columnas 8
-            ArrayList<String> interno = new ArrayList<>();
-
             // Solicitar datos
             for(int i = 0; i < cant_alumnos; i++)
             {
+                // creacion de matriz fila x y Columnas 8
+                ArrayList<String> interno = new ArrayList<>();
+                ArrayList<Double> notas = new ArrayList<>();
+                double suma = 0.00;
+
                 int alumnoId = i + 1;
+
                 System.out.println("Ingrese nombre alumno #" + alumnoId);
                 interno.add(entradadatos.next());
                 System.out.println("Ingrese apellido alumno #" + alumnoId);
@@ -93,9 +93,8 @@ class ingreso {
                     suma += n;
                 }
                 interno.add(Double.toString(suma));
-
+                alumnos.add(interno);
             } // fin ciclo for
-            alumnos.add(interno);
         }
         return alumnos;
     }
