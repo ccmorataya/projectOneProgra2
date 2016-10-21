@@ -2,6 +2,7 @@ package com.company;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.concurrent.atomic.DoubleAccumulator;
 
 public class ingreso {
 
@@ -9,6 +10,11 @@ public class ingreso {
 
         // Metodo scanner
         Scanner entradadatos = new Scanner(System.in);
+        ArrayList<Double> notas = new ArrayList<>();
+        double suma = 0.00;
+        boolean tarea = false;
+        boolean examen = false;
+        boolean proyecto = false;
 
         System.out.println("- Cuantos alumnos deseas ingresar: ");
 
@@ -32,7 +38,6 @@ public class ingreso {
             // Solicitar datos
             for(int i = 0; i < cant_alumnos; i++)
             {
-
                 System.out.println("Ingrese Nombre");
                 interno.add(entradadatos.next());
                 System.out.println("Ingrese Apellido");
@@ -41,12 +46,51 @@ public class ingreso {
                 interno.add(entradadatos.next());
                 System.out.println("Ingrese No. de Carné");
                 interno.add(entradadatos.next());
-                System.out.println("Puntaje de tareas");
-                interno.add(Double.toString(entradadatos.nextDouble()));
-                System.out.println("Puntaje exámenes");
-                interno.add(Double.toString(entradadatos.nextDouble()));
-                System.out.println("Puntaje proyectos");
-                interno.add(Double.toString(entradadatos.nextDouble()));
+                while (!tarea){
+                    System.out.println("Puntaje de tareas");
+                    notas.add(entradadatos.nextDouble());
+                    double notasLastElement = notas.get(notas.size()-1);
+                    if (notasLastElement > 100 || notasLastElement < 0){
+                        System.out.println("Nota invalida intente nuevamente");
+                        notas.remove(notasLastElement);
+                    }
+                    else{
+                        tarea = true;
+                    }
+                }
+                interno.add(Double.toString(notas.get(0)));
+                while (!examen){
+                    System.out.println("Puntaje de examenes");
+                    notas.add(entradadatos.nextDouble());
+                    double examenLastElement = notas.get(notas.size()-1);
+                    if (examenLastElement > 100 || examenLastElement < 0){
+                        System.out.println("Nota invalida intente nuevamente");
+                        notas.remove(examenLastElement);
+                    }
+                    else{
+                        examen = true;
+                    }
+                }
+                interno.add(Double.toString(notas.get(1)));
+                while (!proyecto){
+                    System.out.println("Puntaje de proyectos");
+                    notas.add(entradadatos.nextDouble());
+                    double proyectoLastElement = notas.get(notas.size()-1);
+                    if (proyectoLastElement > 100 || proyectoLastElement < 0){
+                        System.out.println("Nota invalida intente nuevamente");
+                        notas.remove(proyectoLastElement);
+                    }
+                    else{
+                        proyecto = true;
+                    }
+                }
+                interno.add(Double.toString(notas.get(2)));
+
+                for (double n: notas){
+                    suma += n;
+                }
+                interno.add(Double.toString(suma));
+
             } // fin ciclo for
             alumnos.add(interno);
         }
