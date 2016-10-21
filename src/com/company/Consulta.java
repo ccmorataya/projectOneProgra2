@@ -17,5 +17,9 @@ public class Consulta {
 
         }
     }
+
+    public void consultar_alumnos(){
+
+    }
 }
 

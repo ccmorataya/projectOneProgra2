@@ -1,10 +1,11 @@
 package com.company;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class ClaseAlumnos {
 
-    public static void main (String[] args){
+    public static void main (String[] args) throws IOException {
 
         // define la lectura del teclado
         Scanner entradadatos = new Scanner(System.in);
@@ -33,10 +34,10 @@ public class ClaseAlumnos {
                     ingreso ing = new ingreso();
                     ing.ingresar_alumnos();
                     break;
-//                case 2:
-//                    Consulta cons = new Consulta();
-//                    cons.consultar_alumnos();
-//                    break;
+                case 2:
+                    Consulta cons = new Consulta();
+                    cons.consultar_alumnos();
+                    break;
                 case 3:
                     break;
                 case 4:
