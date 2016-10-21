@@ -15,7 +15,7 @@ class Consulta {
     }
 
     void consultar_tareas(ArrayList<ArrayList<String>> alumnos){
-        System.out.println("      Listado de tareas");
+        System.out.println("      Notas de tareas");
         System.out.println("-----------------------------");
         for (ArrayList<String> alumno : alumnos) {
             System.out.print(alumno.get(0) + "\t\t\t");
@@ -27,11 +27,29 @@ class Consulta {
         System.out.println();
     }
 
-    void consultar_proyectos(){
-
+    void consultar_proyectos(ArrayList<ArrayList<String>> alumnos){
+        System.out.println("      Notas de proyectos");
+        System.out.println("-----------------------------");
+        for (ArrayList<String> alumno : alumnos) {
+            System.out.print(alumno.get(0) + "\t\t\t");
+        }
+        System.out.println();
+        for (ArrayList<String> a : alumnos){
+            System.out.print(a.get(5)+"\t\t\t");
+        }
+        System.out.println();
     }
 
-    void consultar_examenes(){
-
+    void consultar_examenes(ArrayList<ArrayList<String>> alumnos){
+        System.out.println("      Notas de examenes");
+        System.out.println("-----------------------------");
+        for (ArrayList<String> alumno : alumnos) {
+            System.out.print(alumno.get(0) + "\t\t\t");
+        }
+        System.out.println();
+        for (ArrayList<String> a : alumnos){
+            System.out.print(a.get(6)+"\t\t\t");
+        }
+        System.out.println();
     }
 }

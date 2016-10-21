@@ -25,7 +25,6 @@ public class ClaseAlumnos {
             System.out.println("¿Qué Deseas hacer?");
             System.out.println("1. Ingresar Datos");
             System.out.println("2. Consultar Datos");
-            System.out.println("3. Ordenar Datos");
             System.out.println("0. Salir");
 
             System.out.print("Favor ingresar opción: ");
@@ -51,16 +50,14 @@ public class ClaseAlumnos {
                     if (optConsulta == 1)
                         cons.consultar_tareas(alumnos);
                     else if (optConsulta == 2)
-                        cons.consultar_proyectos();
+                        cons.consultar_proyectos(alumnos);
                     else if (optConsulta == 3)
-                        cons.consultar_examenes();
+                        cons.consultar_examenes(alumnos);
                     else if (optConsulta == 4)
                         cons.consultar_alumnos(alumnos);
                     else if (optConsulta == 0)
                         break;
 
-                    break;
-                case 3:
                     break;
                 case 0:
                     menu_alive = false;
