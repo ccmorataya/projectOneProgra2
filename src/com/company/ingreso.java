@@ -42,9 +42,9 @@ class ingreso {
                 interno.add(entradadatos.next());
                 System.out.println("Ingrese apellido alumno #" + alumnoId);
                 interno.add(entradadatos.next());
-                System.out.println("Ingrese e-mail alumno #" + alumnoId);
-                interno.add(entradadatos.next());
                 System.out.println("Ingrese No. de Carné alumno #" + alumnoId);
+                interno.add(entradadatos.next());
+                System.out.println("Ingrese e-mail alumno #" + alumnoId);
                 interno.add(entradadatos.next());
                 while (!tarea){
                     System.out.println("Puntaje de tareas alumno #" + alumnoId);
