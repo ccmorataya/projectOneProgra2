@@ -10,11 +10,11 @@ public class ClaseAlumnos {
         Scanner entradadatos = new Scanner(System.in);
 
         // variable del loop para el menu.
-        int opcion_menu=0;
+        boolean menu_alive = true;
 
-        while(opcion_menu==0){
+        while(menu_alive){
 
-            int selec_=0;
+            int selec_= 0;
 
             // Menú
             System.out.println("--Menú de Opciones--");
@@ -40,6 +40,7 @@ public class ClaseAlumnos {
                 case 3:
                     break;
                 case 4:
+                    menu_alive = false;
                     break;
             }
 
