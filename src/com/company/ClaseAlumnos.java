@@ -49,7 +49,7 @@ public class ClaseAlumnos {
                     Consulta cons = new Consulta();
 
                     if (optConsulta == 1)
-                        cons.consultar_tareas();
+                        cons.consultar_tareas(alumnos);
                     else if (optConsulta == 2)
                         cons.consultar_proyectos();
                     else if (optConsulta == 3)
