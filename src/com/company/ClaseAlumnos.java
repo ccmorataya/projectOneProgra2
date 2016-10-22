@@ -19,8 +19,8 @@ public class ClaseAlumnos {
 
             int selec_;
             int optConsulta;
-            int orderOption;
-            int ascOrDesc;
+            int orderOption = 1;
+            int ascOrDesc = 1;
 
             // Menú
             System.out.println("--Menú de Opciones--");
@@ -47,22 +47,23 @@ public class ClaseAlumnos {
                     System.out.println("0. Regresar");
                     optConsulta = entradadatos.nextInt();
 
-                    System.out.println("Ordenar por: ");
-                    System.out.println("1. Nombre");
-                    System.out.println("2. Apellido");
-                    System.out.println("3. Carné");
-                    System.out.println("4. E-mail");
-                    System.out.println("5. Notas de tareas");
-                    System.out.println("6. Notas de examenes");
-                    System.out.println("7. Notas de proyectos");
-                    System.out.println("8. Nota final");
-                    System.out.println("0. Regresar");
-                    orderOption = entradadatos.nextInt();
-
-                    System.out.println("Elige el tipo de ordenamiento:");
-                    System.out.println("1. Ascendente");
-                    System.out.println("2. Descendente");
-                    ascOrDesc = entradadatos.nextInt();
+                    if (optConsulta == 4){
+                        System.out.println("Ordenar por: ");
+                        System.out.println("1. Nombre");
+                        System.out.println("2. Apellido");
+                        System.out.println("3. Carné");
+                        System.out.println("4. E-mail");
+                        System.out.println("5. Notas de tareas");
+                        System.out.println("6. Notas de examenes");
+                        System.out.println("7. Notas de proyectos");
+                        System.out.println("8. Nota final");
+                        System.out.println("0. Regresar");
+                        orderOption = entradadatos.nextInt();
+                        System.out.println("Elige el tipo de ordenamiento:");
+                        System.out.println("1. Ascendente");
+                        System.out.println("2. Descendente");
+                        ascOrDesc = entradadatos.nextInt();
+                    }
 
                     Consulta cons = new Consulta();
 
